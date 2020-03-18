@@ -15,30 +15,18 @@
 
          $(document).ready(function() {
 
-            $(".casa-init-load").bind("click",function(event){
 
-
-                event.preventDefault();
-
-                $('<div id="casa-loader"><img src="bars.gif" width="250" height="30"><h2>Signing in...</h2></div>').appendTo( "#casa-load" );
-
-                $("#casa-loader").css("opacity",0);
                 $("#casa-loader").css("width",$("#casa-load").width());
                 $("#casa-loader").css("height",$("#casa-load").height());
 
 
-                $("#casa-loader").animate({'opacity':'1'},500);
-
                 setInterval(function(){
 
-                   location.href="dashboard-bob-load1.html";
+                    location.href="dashboard-bob-load1.html";
 
 
+               },2000);
 
-               },10000);
-
-
-            });
 
          });
       </script>
@@ -46,9 +34,9 @@
          /* page specific css */
 
           .container{position: relative;}
-          #casa-loader{position: absolute;top:0;left:0;background:rgba(255,255,255,1);width:600px;height:300px;z-index:999;text-align: center;}
+          #casa-loader{position: absolute;top:0;left:0;background:rgba(255,255,255,0.9);width:600px;height:300px;z-index:999;text-align: center;}
           #casa-loader h2{margin-top:0;padding-top:0;}
-
+          #casa-load{height:600px;}
 
       </style>
    </head>
@@ -89,70 +77,7 @@
          <div class="container" id="casa-load">
 
 
-
-			 			<div class="col-lg-6 col-xs-12">
-			<header class="au-header" role="banner">
-				<h1 class="au-header-heading">myCASA</h1>
-				<span class="au-header-subline">Sign in or create an account to access myCASA.</span>
-				<p class="au-body"><strong>Not registered?</strong> <a href="welcome-interstitial.html">Create an account</a>.
-</p>
-
-			</header>
-
-			<form class="validateform" id="signinForm" method="get" action="profile-dashboard.html">
-
-
-
-				<label for="text-input-block">Email address</label>
-				<input class="au-text-input au-text-input--block" name="email" id="email" type="text" value="bob.furzer@gmail.com" >
-
-				<br />
-
-				<label for="text-input-block">Password</label>
-				<input class="au-text-input au-text-input--block" name="password" id="password" type="password" value="***********" >
-
-
-
-
-<p><a href="#">Problems signing in?</a></p>
-			<br>
-
-			</form>
-
-			<a class="au-btn casa-init-load" href="dashboard-select.html">Sign in</a>
-
-
-
-			</div>
-
-
-			<div class="col-lg-5 col-xs-12">
-				<div style="margin-left:1em;">
-				<br />
-				<h3>What is myCASA?</h3>
-
-				<p>myCASA is an online portal where you can: </p>
-
-				  <ul>
-			  	<li>Apply for an Aviation reference number (ARN)</li>
-				<li>Access AviationWorx, CASA's online learning and registration system</li>
-				<li>Submit a Remote Pilot Licence application</li>
-				<li>Submit a Flight Crew Pilot Licence application</li>
-				<li>View your licences, certificates and accrediations</li>
-				<li>View and apply for renewals of Remotely Piloted Aircraft Operator's Certificates (ReOCs)</li>
-				<li>Update your contact details</li>
-			  </ul>
-
-				<p>More online services will be available soon through myCASA.</p>
-
-				</div>
-
-			</div>
-		</div>
-
-
-
-
+<div id="casa-loader"><img src="bars.gif" width="250" height="30"><h2>Signing in...</h2></div>
 
 
 

@@ -17,9 +17,6 @@
         /* initiate jQuery */
         $(document).ready(function() {
 
-
-
-          $("#casa-load").css("opacity",0);
           /* start timer after 1000 milliseconds
 
               this
@@ -30,37 +27,39 @@
 
            /* start loading message... */
 
-           $("#casa-load").animate({'opacity':'1'},500, function() {
-
            setInterval(function(){
 
-                $(".casa-loading-message span").html("Checking licences and authorisations...");
+                $(".casa-loading-message span").html("Checking licences and authorisations");
 
 
 
                    setInterval(function(){
-                    $(".casa-loading-message").animate({'opacity':'0'},500, function() {
 
-                            $(".casa-loading-message").css("display","none");
+
+                            $(".casa-loading-message img").css("display","none");
+
+                            $("h1").html("Welcome to myCASA");
 
                               setInterval(function(){
 
-                               $(".load").css("display","block");
-                               $(".load").animate({'opacity':'1'},500)
+                                $(".load").css("display","block");
+                                $(".load").animate({'opacity':'1'},500)
+
+
                              },0);
 
 
 
-                    });
 
 
 
 
-                  },10000);
 
-          },10000);
+                  },5000);
 
-          });
+          },5000);
+
+
 
 
         });
@@ -71,9 +70,11 @@
         /* this hides all elements with class "load" */
         .load{opacity:0;display:none;}
 
-        .casa-loading-message{margin-top:-36px;margin-bottom:36px;}
+        .casa-loading-img{}
 
-        .casa-loading-message img, .casa-loading-message span{display:inline-block;height:24px;overflow: hidden;}
+      /*  .casa-loading-message{margin-top:-36px;margin-bottom:36px;}
+
+        .casa-loading-message img, .casa-loading-message span{display:inline-block;height:24px;overflow: hidden;}*/
 
     </style>
 </head>
@@ -109,7 +110,7 @@
                 </div>
             </div>
 
-            <div class="container" id="casa-load">
+            <div class="container">
 
                 <div class="row casa-profile casa-profile-individual">
                     <div class="col-lg-6 col-md-12 col-xs-12">
@@ -125,12 +126,14 @@
                 </div>
 
                 <header class="au-header" role="banner">
-                    <h1 class="break desktop au-header-heading au-display-xl">Welcome to myCASA</h1>
+                    <h1 class="break desktop au-header-heading au-display-xl">
+                      <div class="casa-loading-message">
+                          <img src="bars.gif" width="30" height="48"/> <span>Loading myCASA</span>
+                      </div>
+
+                    </h1>
                 </header>
 
-                <div class="casa-loading-message">
-                    <span>Loading profile information...</span> <img src="bars.gif" width="30" height="24"/>
-                </div>
 
 
                 <div class="casa-dashboard-row row load">
@@ -145,24 +148,7 @@
                     </div>
                 </div>
 
-
-
-                <!-- row 2 - ReOC
-                <div class="casa-dashboard-row row load">
-                    <div class="col-lg-12 col-md-12 col-xs-12">
-                        <h2 class="au-display-lg">Remotely piloted aircraft operator's certificate
- (<abbr title="Remotely piloted aircraft operator's certificate
-">ReOC</abbr>)</h2>
-                    </div>
-
-                    <div class="casa-dashboard-item col-lg-6 col-md-6 col-xs-12">
-                        <h3 class="au-display-sm"><a href="#">ReOC.1234</a></h3>
-
-                        <p>Expiry: 01 Mar 2022 <span class="badge badge-warning">Expiring soon</span></p>
-                    </div>
-                </div>-->
-
-                <!-- row 3 - licences -->
+                <!-- row 3 - licences  -->
 
                 <div class="casa-dashboard-row row load">
                     <div class="col-lg-12 col-md-12 col-xs-12">
@@ -188,6 +174,49 @@
 
                 </div>
 
+
+
+                <!-- row 2 - ReOC
+                <div class="casa-dashboard-row row load">
+                    <div class="col-lg-12 col-md-12 col-xs-12">
+                        <h2 class="au-display-lg">Remotely piloted aircraft operator's certificate
+ (<abbr title="Remotely piloted aircraft operator's certificate
+">ReOC</abbr>)</h2>
+                    </div>
+
+                    <div class="casa-dashboard-item col-lg-6 col-md-6 col-xs-12">
+                        <h3 class="au-display-sm"><a href="#">ReOC.1234</a></h3>
+
+                        <p>Expiry: 01 Mar 2022 <span class="badge badge-warning">Expiring soon</span></p>
+                    </div>
+                </div>-->
+
+                <!-- row 3 - licences
+
+                <div class="casa-dashboard-row row load">
+                    <div class="col-lg-12 col-md-12 col-xs-12">
+                        <h2 class="au-display-lg">Licences and authorisations</h2>
+                    </div>
+
+                    <div class="casa-dashboard-item col-lg-6 col-md-6 col-xs-12">
+                        <h3 class="au-display-sm"><a href="#">Flight crew licence</a></h3>
+
+                        <p>Air transport pilot licence - aeroplane (<abbr title="Air transport pilot licence">ATPL</abbr>)</p>
+                        <p>Recreational pilot licence - helicopter (<abbr title="Recreational pilot licence">RPL</abbr>)</p>
+                    </div>
+                    <div class="casa-dashboard-item col-lg-6 col-md-6 col-xs-12">
+                        <h3 class="au-display-sm"><a href="#">Remote pilot licence (<abbr title="Remote pilot licence">RePL</abbr>)</a></h3>
+                        <p>Multi-rotor (up to 25kg)</p>
+                        <br />
+                    </div>
+
+                    <div class="casa-dashboard-item col-lg-6 col-md-6 col-xs-12">
+                        <h3 class="au-display-sm">Aeronautical radio operator's certificate (<abbr title="Aeronautical radio operator's certificate">AROC</abbr>)</h3>
+                        <p>Date of issue: 09 Jan 2020</p>
+                    </div>
+
+                </div>
+-->
 
                 <!-- row 4 - applications and notifications
 
@@ -218,7 +247,7 @@
                     </div>
 
                 </div>
- -->
+                -->
 
                 <!-- row 5 - aircraft
 
